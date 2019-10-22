@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>끝말잇기</title>
+</head>
+<body>
+        
+</body>
+</html>
+<script>
+    var num1 =  Math.ceil(Math.random() * 9) + 1;
+    var num2 = Math.ceil(Math.random() * 9) + 1;
+    var result = num1 * num2;
+    var condition = true;
+
+    var body = document.body;
+    var word = document.createElement('div');
+    word.textContent = String(num1) + '곱하기' + String(num2) + '는?'
+    document.body.append(word);
+
+    var form = document.createElement('form');
+    document.body.append(form);
+
+    var inputbox = document.createElement('input');
+    form.append(inputbox);
+    inputbox.type = 'number';
+
+    var btn = document.createElement('button');
+    btn.textContent = '입력';
+    form.append(btn);
+
+    var resultbox = document.createElement('div');
+    document.body.append(resultbox);
+
+    form.addEventListener('submit', function callbackFunc(e) {
+        e.preventDefault();
+
+        console.log(result, inputbox.value);
+
+        if ( result === Number(inputbox.value) ) {
+             resultbox.textContent = '딩동댕';
+
+            //var 빼면 기존의 변수를 수정한다는 의미
+             num1 =  Math.ceil(Math.random() * 9) + 1;
+             num2 = Math.ceil(Math.random() * 9) + 1;
+             result = num1 * num2;
+             word.textContent = String(num1) + '곱하기' + String(num2) + '는?'
+
+             inputbox.value = '';
+             inputbox.focus();
+        } else {
+             resultbox.textContent = '땡';
+             inputbox.value = '';
+             inputbox.focus();
+        }
+    })
+</script>
