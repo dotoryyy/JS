@@ -22,53 +22,63 @@ console.log(winNum.sort(function(p,c) {return p - c;}), bonus);
 //sort: 0보다 크면 순서를 바꿈
 
 
-
-function ballColor(num) {
-    var resultArea = document.getElementById('result');
+var resultArea = document.querySelector('#result');
+function ballColor(num, resultArea) {
     var ball = document.createElement('div');
-    ball.textContent = winNum[num];
+    ball.textContent = num;
     ball.style.display = 'inline-block';
     ball.style.border = '1px solid black';
     ball.style.borderRadius = '50%';
-    ball.style.width = '20px';
-    ball.style.height = '20px';
+    ball.style.width = '40px';
+    ball.style.height = '40px';
     ball.style.textAlign = 'center';
+    ball.style.fontWeight = 'bold';
+    ball.style.lineHeight = '40px';
+    ball.style.color = 'white';
+    ball.style.textAlign = 'center';
+    ball.style.marginRight = '10px';
+    ball.id = 'ballID' + num;
+    var backClr;
+    if (num<= 10) {
+        backClr = 'red';
+    } else if (num<= 20) {
+        backClr = 'orange';
+    } else if (num<= 30) {
+        backClr = 'yellow';
+        ball.style.color = 'black';
+    } else if (num<= 40) {
+        backClr = 'blue';
+    } else {
+        backClr = 'green';
+    }
+    ball.style.background = backClr;
     resultArea.appendChild(ball);
 }
 
 setTimeout(function callbackFunc() {
-    ballColor(0)
+    ballColor(winNum[0], resultArea)
 }, 500);
 setTimeout(function callbackFunc() {
-    ballColor(1)
+    ballColor(winNum[1], resultArea)
 }, 1000);
 setTimeout(function callbackFunc() {
-    ballColor(2)
+    ballColor(winNum[2], resultArea)
 }, 1500);
 setTimeout(function callbackFunc() {
-    ballColor(3)
+    ballColor(winNum[3], resultArea)
 }, 2000);
 setTimeout(function callbackFunc() {
-    ballColor(4)
+    ballColor(winNum[4], resultArea)
 }, 2500);
 setTimeout(function callbackFunc() {
-    ballColor(5)
+    ballColor(winNum[5], resultArea)
 }, 3000);
 
 // for (var i = 0; i < winNum.length; i += 1) {
     
 // }
 setTimeout(function callbackFunc() {
-    var resultArea = document.getElementsByClassName('bonus')[0];
-    var ball = document.createElement('div');
-    ball.textContent = winNum[num];
-    ball.style.display = 'inline-block';
-    ball.style.border = '1px solid black';
-    ball.style.borderRadius = '50%';
-    ball.style.width = '20px';
-    ball.style.height = '20px';
-    ball.style.textAlign = 'center';
-    bonusBall.textContent = bonus;
-    resultArea.appendChild(ball);
+    var area = document.querySelector('.bonus');
+    ballColor(bonus, area);
 }, 3500);
 
