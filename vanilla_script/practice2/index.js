@@ -1,5 +1,32 @@
-const title = document.getElementById("title");
+const title = document.querySelector("#title");
+title.innerHTML = "inner HTML";
+title.style.color = 'green';
+document.title = '자바스크립트 연습';
 
-console.log(title)
+title.textContent = 'Hi 🐸'
 
-title.innerHTML = "inner HTML"
+function handleResize(event) {
+    console.log(event);
+}
+
+const BASE_COLOR = 'red'
+const OTHER_COLOR = 'blue'
+
+
+function handleClick() {
+    const currentCol = title.style.color;
+    if (currentCol === BASE_COLOR) {
+        title.style.color = OTHER_COLOR;
+    } else {
+        title.style.color = BASE_COLOR;
+    }
+};
+
+function init() {
+    title.style.color = BASE_COLOR;
+    title.addEventListener("click", handleClick);
+}
+init();
+
+
+
