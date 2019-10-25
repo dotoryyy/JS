@@ -25,8 +25,8 @@ function handleClick() {
 function init() {
     title.style.color = BASE_COLOR;
     title.addEventListener("click", handleClick);
-}
+} //mouseenter
 init();
 
-
+//always use MDN
 
