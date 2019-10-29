@@ -55,6 +55,7 @@ function ballColor(num, resultArea) {
     resultArea.appendChild(ball);
 }
 
+
 setTimeout(function callbackFunc() {
     ballColor(winNum[0], resultArea)
 }, 500);
@@ -75,8 +76,9 @@ setTimeout(function callbackFunc() {
 }, 3000);
 
 // for (var i = 0; i < winNum.length; i += 1) {
-    
+
 // }
+
 setTimeout(function callbackFunc() {
     var area = document.querySelector('.bonus');
     ballColor(bonus, area);

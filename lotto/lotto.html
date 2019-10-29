@@ -6,13 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>로또추첨기!</title>
     <style>
+        .lotto_area{
+            border: 1px solid #000;
+            width: 350px;
+            height: 250px;
+            padding: 0 30px;
+        }
+        #result{
+            height: 40px;
+            text-align: center
+        }
+        .winNum, .bonus_txt, .bonus {
+            text-align: center;
+            display: block;
+        }
+
     </style>
 </head>
 <body>
-    <p>당첨숫자!</p>
-    <div id="result"></div>
-    <p>보너스!</p>
-    <div class="bonus"></div>
+    <div class="lotto_area">
+        <p class="winNum">당첨숫자!</p>
+        <div id="result"></div>
+        <p class="bonus_txt">BONUS</p>
+        <div class="bonus"></div>
+    </div>
+    <div class="button_area">
+        <button class="pull">뽑기</button>
+    </div>
+    
     <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
