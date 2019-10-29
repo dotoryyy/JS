@@ -12,6 +12,7 @@ while (candidate.length > 0) {
     //while: 기준값이 계속 바뀔 때 (뽑은 숫자의 개수가 점점 줄어야함)
     //splice: 배열에서 특정 범위의 값들을 추출하고, 그 자리에 새로운 값을 넣음
     var moveVal = candidate.splice(Math.floor(Math.random() * candidate.length), 1)[0];
+
     //실제 로또추첨기에는 진짜 랜덤을 쓰면 안됨
     shuffle.push(moveVal);
 }
@@ -78,9 +79,14 @@ setTimeout(function callbackFunc() {
 // for (var i = 0; i < winNum.length; i += 1) {
 
 // }
+ 
+//재귀함수에 대해 생각해보기
 
 setTimeout(function callbackFunc() {
     var area = document.querySelector('.bonus');
     ballColor(bonus, area);
 }, 3500);
 
+var test = [1,2,3,4,5,6,7,8];
+test.splice(2,3);
+console.log(test);
