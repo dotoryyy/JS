@@ -38,7 +38,7 @@ function ballColor(num, resultArea) {
     ball.style.color = 'white';
     ball.style.textAlign = 'center';
     ball.style.marginRight = '10px';
-    ball.id = 'ballID' + num;
+    //ball.id = 'ballID' + num;
     var backClr;
     if (num<= 10) {
         backClr = 'red';
