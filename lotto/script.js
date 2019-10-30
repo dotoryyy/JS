@@ -75,7 +75,6 @@ function ballColor(num, resultArea) {
 // setTimeout(function callbackFunc() {
 //     ballColor(winNum[5], resultArea)
 // }, 3000);
-
 for (let i = 0; i < winNum.length; i += 1) {
     setTimeout(function callbackFunc() {
         ballColor(winNum[i], resultArea)
@@ -83,6 +82,7 @@ for (let i = 0; i < winNum.length; i += 1) {
 };
 
 //let과 var의 차이가 몬데
+// 블록스코프!!
 //재귀함수에 대해 생각해보기
 
 
