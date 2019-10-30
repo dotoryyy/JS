@@ -57,36 +57,38 @@ function ballColor(num, resultArea) {
 }
 
 
-setTimeout(function callbackFunc() {
-    ballColor(winNum[0], resultArea)
-}, 500);
-setTimeout(function callbackFunc() {
-    ballColor(winNum[1], resultArea)
-}, 1000);
-setTimeout(function callbackFunc() {
-    ballColor(winNum[2], resultArea)
-}, 1500);
-setTimeout(function callbackFunc() {
-    ballColor(winNum[3], resultArea)
-}, 2000);
-setTimeout(function callbackFunc() {
-    ballColor(winNum[4], resultArea)
-}, 2500);
-setTimeout(function callbackFunc() {
-    ballColor(winNum[5], resultArea)
-}, 3000);
+// setTimeout(function callbackFunc() {
+//     ballColor(winNum[0], resultArea)
+// }, 500);
+// setTimeout(function callbackFunc() {
+//     ballColor(winNum[1], resultArea)
+// }, 1000);
+// setTimeout(function callbackFunc() {
+//     ballColor(winNum[2], resultArea)
+// }, 1500);
+// setTimeout(function callbackFunc() {
+//     ballColor(winNum[3], resultArea)
+// }, 2000);
+// setTimeout(function callbackFunc() {
+//     ballColor(winNum[4], resultArea)
+// }, 2500);
+// setTimeout(function callbackFunc() {
+//     ballColor(winNum[5], resultArea)
+// }, 3000);
 
-// for (var i = 0; i < winNum.length; i += 1) {
+for (let i = 0; i < winNum.length; i += 1) {
+    setTimeout(function callbackFunc() {
+        ballColor(winNum[i], resultArea)
+    }, 500*i);
+};
 
-// }
- 
+//let과 var의 차이가 몬데
 //재귀함수에 대해 생각해보기
 
+
+//얘도 넣으려면???
 setTimeout(function callbackFunc() {
     var area = document.querySelector('.bonus');
     ballColor(bonus, area);
 }, 3500);
 
-var test = [1,2,3,4,5,6,7,8];
-test.splice(2,3);
-console.log(test);
